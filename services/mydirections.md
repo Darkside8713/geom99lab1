@@ -8,9 +8,8 @@ Be creative and use multiple parameters from the API documentation to earn a top
 
 ## Directions URL
 
-```
-https://YourDirectionsApiURLGoesHere
-```
+
+https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood&key=AIzaSyDv3MGflguusDaLmV_-BUlmuoUI4EbM88w
 
 ## Next paste the full JSON response to this query here:
 
