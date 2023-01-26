@@ -1,7 +1,6 @@
-
- function initMap() {
-  const hamilton = { lat: 43.2557, lng: -79.8711 };
-  const trois = { lat: 46.3430, lng: -72.5421 };
+function initMap() {
+  const h = { lat: 43.2557, lng: -79.8711 };
+  const t = { lat: 46.3430, lng: -72.5421 };
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 7,
     center: { lat: 45.4215, lng: -75.6972 },
@@ -22,9 +21,8 @@
   });
 
   drivePath.setMap(map);
-}
 
-  const hamiltoncontentString =
+const hcontentString =
     '<div id="content">' +
     '<div id="siteNotice">' +
     "</div>" +
@@ -45,21 +43,19 @@
     "(last visited June 22, 2009).</p>" +
     "</div>" +
     "</div>";
-
-  const hamiltoninfowindow = new google.maps.InfoWindow({
-    content: hamiltoncontentString,
+  const hinfowindow = new google.maps.InfoWindow({
+    content: hcontentString,
     ariaLabel: "Hamilton",
   });
-
-  const hamiltonmarker = new google.maps.Marker({
-    position: hamilton,
+  const hmarker = new google.maps.Marker({
+    position: { lat: 43.2557, lng: -79.8711 } ,
     map,
     title: "Hamilton",
   });
 
-  hamiltonmarker.addListener("click", () => {
-    hamiltoninfowindow.open({
-      anchor: marker,
+  hmarker.addListener("click", () => {
+    hinfowindow.open({
+      anchor: hmarker,
       map,
     });
   });
