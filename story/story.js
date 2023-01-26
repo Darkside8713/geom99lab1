@@ -1,25 +1,18 @@
 function initMap() {
-  // changed the pins/airports into variables for optimization purposes
-    const dxb = { lat: 43.2557, lng: -79.8711 };
-    const fra = { lat: 46.3430, lng: -72.5421 };
+    const hhh = { lat: 43.2557, lng: -79.8711 };
+    const ttr = { lat: 46.3430, lng: -72.5421 };
     const iconURL = { url: 'https://francis-soriano.github.io/geom99lab1/story/airport.png' }
     const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 5,
+      zoom: 8,
       center: { lat: 45.4215, lng: -75.6972 },
     });
     
 // The following script is taken (and modified) from: https://developers.google.com/maps/documentation/javascript/examples/polyline-simple#maps_polyline_simple-javascript
-    const firstLeg = [
-      dxb, fra
-    ] ;
-    const secondLeg = [
-      fra, yul
-    ] ;
-    const thirdLeg = [
-      yul, ysj
+    const first = [
+      hhh, ttr
     ] ;
     const firstFlightPath = new google.maps.Polyline({
-        path: firstLeg,
+        path: first,
         geodesic: true,
         strokeColor: "#FFADAD",
         strokeOpacity: 1.0,
@@ -27,30 +20,21 @@ function initMap() {
     });
 
     const secondFlightPath = new google.maps.Polyline({
-        path: secondLeg,
+        path: second,
         geodesic: true,
         strokeColor: "#CAFFBF",
         strokeOpacity: 1.0,
         strokeWeight: 4,
     });
-
-  const thirdFlightPath = new google.maps.Polyline({
-        path: thirdLeg,
-        geodesic: true,
-        strokeColor: "#BDB2FF",
-        strokeOpacity: 1.0,
-        strokeWeight: 4,
-    });
-
+  
   firstFlightPath.setMap(map);
   secondFlightPath.setMap(map);
-  thirdFlightPath.setMap(map);
 
 // The following script is taken (and modified) from: https://developers.google.com/maps/documentation/javascript/custom-markers
 // As well as: https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple
 // And also: https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple
 
-const dxbContentString =
+const hhhContentString =
     '<div id="content">' +
     '<div id="siteNotice">' +
     "</div>" +
@@ -68,95 +52,26 @@ const dxbContentString =
     "</div>" +
     "</div>";
 
-const dxbinfowindow = new google.maps.InfoWindow({
-  content: dxbContentString,
+const hhhinfowindow = new google.maps.InfoWindow({
+  content: hhhContentString,
   ariaLabel: "Dubai Airport",
   });
-const dxbMarker = new google.maps.Marker({
-  position: dxb,
+const hhhMarker = new google.maps.Marker({
+  position: hhh,
   map,
   icon: iconURL,
-  title: "DXB",
+  title: "hhh",
   });
 
-dxbMarker.addListener("click", () => {
-  dxbinfowindow.open({
-  anchor: dxbMarker,
+hhhMarker.addListener("click", () => {
+  hhhinfowindow.open({
+  anchor: hhhMarker,
   map,
     });
   });
 
-const fraContentString = 
-'<div id="content">' +
-    '<div id="siteNotice">' +
-    "</div>" +
-    '<h1 id="firstHeading" class="firstHeading">Frankfurt</h1>' +
-    '<div id="bodyContent">' +
-    "<p><b>Frankfurt Airport (FRA)</b>, also known as <b>Flughafen Frankfurt Main</b>, " +
-    "is one of the major ariports in Europe. The airport is the main hub for the flag " +
-    "carrier of Germany; Lufthansa. The airport is one of the most connected " +
-    "in the world, serving more than 300 direct destinations. The airport is the " +
-    "busiest in Germany and the 4th busiest in Europe. </p>" +
-    '<p>Attribution: Frankfurt Airport, <a href="https://en.wikipedia.org/wiki/Frankfurt_Airport">' +
-    "https://en.wikipedia.org/wiki/Frankfurt_Airport</a> " +
-    "(last visited January 25, 2023).</p>" +
-    "</div>" +
-    "</div>";
 
-const frainfowindow = new google.maps.InfoWindow({
-  content: fraContentString,
-  ariaLabel: "Frankfurt Airport",
-  });
-const fraMarker = new google.maps.Marker({
-  position: fra,
-  map,
-  icon: iconURL,
-  title: "FRA",
-  });
-
-fraMarker.addListener("click", () => {
-  frainfowindow.open({
-  anchor: fraMarker,
-  map,
-    });
-  });
-
-const yulContentString = 
-'<div id="content">' +
-    '<div id="siteNotice">' +
-    "</div>" +
-    '<h1 id="firstHeading" class="firstHeading">Montreal</h1>' +
-    '<div id="bodyContent">' +
-    "<p><b>Montréal–Trudeau International Airport (YUL)</b> or <b>Montréal–Trudeau</b>, " +
-    "is a major airport in Canada serving Montreal and surrounding areas. Of the two airports in " +
-    "Montreal, the other being Montréal–Mirabel, Montréal–Trudeau is the busiest in the province, " +
-    "making it the 4th busiest in Canada. It is one of the main gateways into Canada. The airport is " +
-    "home to Air Canada, Canada's flag carrier airline. </p>" +
-    '<p>Attribution: Montreal Airport, <a href="https://en.wikipedia.org/wiki/Montr%C3%A9al%E2%80%93Trudeau_International_Airport">' +
-    "https://en.wikipedia.org/wiki/Montréal-Trudeau_International_Airport</a> " +
-    "(last visited January 25, 2023).</p>" +
-    "</div>" +
-    "</div>";
-
-const yulinfowindow = new google.maps.InfoWindow({
-  content: yulContentString,
-  ariaLabel: "Montreal Airport",
-  });
-const yulMarker = new google.maps.Marker({
-  position: yul,
-  map,
-  icon: iconURL,
-  title: "YUL",
-  });
-
-yulMarker.addListener("click", () => {
-  yulinfowindow.open({
-  anchor: yulMarker,
-  map,
-    });
-  });
-
-const ysjContentString = 
+const ttrContentString = 
 '<div id="content">' +
     '<div id="siteNotice">' +
     "</div>" +
@@ -173,20 +88,20 @@ const ysjContentString =
     "</div>" +
     "</div>";
 
-const ysjinfowindow = new google.maps.InfoWindow({
-  content: ysjContentString,
+const ttrinfowindow = new google.maps.InfoWindow({
+  content: ttrContentString,
   ariaLabel: "Saint John Airport",
   });
-const ysjMarker = new google.maps.Marker({
-  position: ysj,
+const ttrMarker = new google.maps.Marker({
+  position: ttr,
   map,
   icon: iconURL,
-  title: "YSJ",
+  title: "ttr",
   });
 
-ysjMarker.addListener("click", () => {
-  ysjinfowindow.open({
-  anchor: ysjMarker,
+ttrMarker.addListener("click", () => {
+  ttrinfowindow.open({
+  anchor: ttrMarker,
   map,
     });
   });
