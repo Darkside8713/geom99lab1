@@ -79,7 +79,7 @@ const tcontentString =
   });
   
   const tmarker = new google.maps.Marker({
-    position: { lat: 43.2557, lng: -79.8711 } ,
+    position: { lat: 46.3430, lng: -72.5421 } ,
     map,
     title: "Trois-Rivières",
   });
