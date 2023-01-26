@@ -3,7 +3,7 @@ function initMap() {
     const ttr = { lat: 46.3430, lng: -72.5421 };
     const iconURL = { url: 'https://francis-soriano.github.io/geom99lab1/story/airport.png' }
     const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 8,
+      zoom: 7,
       center: { lat: 45.4215, lng: -75.6972 },
     });
     
