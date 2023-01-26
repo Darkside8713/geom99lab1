@@ -19,7 +19,7 @@
     strokeWeight: 2,
   });
 
-  flightPath.setMap(map);
+  drivePath.setMap(map);
 }
 
 window.initMap = initMap;
