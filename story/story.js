@@ -60,7 +60,7 @@ const tcontentString =
    '<div id="content">' +
     '<div id="siteNotice">' +
     "</div>" +
-    '<h1 id="firstHeading" class="firstHeading">Trois-Rivière</h1>' +
+    '<h1 id="firstHeading" class="firstHeading">Trois-Rivières</h1>' +
     '<div id="bodyContent">' +
     "<p><b>Trois-Rivière</b> is a city in the Mauricie administrative region of Quebec, Canada," +
     "at the confluence of the Saint-Maurice and Saint Lawrence rivers," +
