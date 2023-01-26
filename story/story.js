@@ -28,7 +28,6 @@ function initMap() {
     });
   
   firstFlightPath.setMap(map);
-  secondFlightPath.setMap(map);
 
 // The following script is taken (and modified) from: https://developers.google.com/maps/documentation/javascript/custom-markers
 // As well as: https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple
