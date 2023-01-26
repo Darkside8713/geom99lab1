@@ -24,7 +24,7 @@
   drivePath.setMap(map);
 }
 
-  const contentString =
+  const hamiltoncontentString =
     '<div id="content">' +
     '<div id="siteNotice">' +
     "</div>" +
@@ -46,18 +46,19 @@
     "</div>" +
     "</div>";
 
-  const infowindow = new google.maps.InfoWindow({
-    content: contentString,
-    ariaLabel: "Uluru",
-  });
-  const marker = new google.maps.Marker({
-    position: uluru,
-    map,
-    title: "Uluru (Ayers Rock)",
+  const hamiltoninfowindow = new google.maps.InfoWindow({
+    content: hamiltoncontentString,
+    ariaLabel: "Hamilton",
   });
 
-  marker.addListener("click", () => {
-    infowindow.open({
+  const hamiltonmarker = new google.maps.Marker({
+    position: hamilton,
+    map,
+    title: "Hamilton",
+  });
+
+  hamiltonmarker.addListener("click", () => {
+    hamiltoninfowindow.open({
       anchor: marker,
       map,
     });
