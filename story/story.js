@@ -1,7 +1,7 @@
 function initMap() {
     const hhh = { lat: 43.2557, lng: -79.8711 };
     const ttr = { lat: 46.3430, lng: -72.5421 };
-    const iconURL = { url: 'https://francis-soriano.github.io/geom99lab1/story/airport.png' }
+    const iconURL = { url: 'https://darkside8713.github.io/geom99lab1/story/2767099-200.png' }
     const map = new google.maps.Map(document.getElementById("map"), {
       zoom: 7,
       center: { lat: 45.4215, lng: -75.6972 },
